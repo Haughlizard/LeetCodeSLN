@@ -42,13 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LeetCode100.cs" />
+    <Compile Include="LeetCode1047.cs" />
     <Compile Include="LeetCode136.cs" />
     <Compile Include="LeetCode14.cs" />
+    <Compile Include="LeetCode147.cs" />
+    <Compile Include="LeetCode190.cs" />
     <Compile Include="LeetCode268.cs" />
     <Compile Include="LeetCode342.cs" />
     <Compile Include="LeetCode561.cs" />
     <Compile Include="LeetCode700.cs" />
+    <Compile Include="LeetCode705.cs" />
     <Compile Include="LeetCode724.cs" />
+    <Compile Include="LeetCode82.cs" />
+    <Compile Include="LeetCode83.cs" />
     <Compile Include="LeetCode88.cs" />
     <Compile Include="LeetCode92.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
