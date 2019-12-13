@@ -52,7 +52,11 @@
     <Compile Include="LeetCode14UnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LeetCode88UnitTest.cs" />
-    <Compile Include="LeetCode92UnitTest.cs" />
+    <Compile Include="LeetCode268UnitTest.cs" />
+    <Compile Include="LeetCode136UnitTest.cs" />
+    <Compile Include="LeetCode724UnitTest.cs" />
+    <Compile Include="LeetCode342UnitTest.cs" />
+    <Compile Include="LeetCode561UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
