@@ -17,5 +17,13 @@ namespace LeetCodeUnitTest
             int[] expect = new int[6] { 1, 2, 4, 5, 6, 9 };
             CollectionAssert.AreEqual(nums1, expect);
         }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            int[] nums1 = new int[5] {1,3,1,5,4 };
+            var result = LeetCode532.FindPairs(nums1,0);
+            Assert.AreEqual(1, result);
+        }
     }
 }

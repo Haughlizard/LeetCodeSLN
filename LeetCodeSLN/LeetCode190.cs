@@ -29,6 +29,7 @@ namespace LeetCodeSLN
         public static uint reverseBits(uint n)
         {
             //TODO
+            return 0;
         }
     }
 }
