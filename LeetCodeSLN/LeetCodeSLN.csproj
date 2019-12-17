@@ -44,6 +44,7 @@
     <Compile Include="LeetCode100.cs" />
     <Compile Include="LeetCode1047.cs" />
     <Compile Include="LeetCode1154.cs" />
+    <Compile Include="LeetCode1165.cs" />
     <Compile Include="LeetCode136.cs" />
     <Compile Include="LeetCode14.cs" />
     <Compile Include="LeetCode147.cs" />
@@ -51,10 +52,12 @@
     <Compile Include="LeetCode223.cs" />
     <Compile Include="LeetCode237.cs" />
     <Compile Include="LeetCode268.cs" />
+    <Compile Include="LeetCode34.cs" />
     <Compile Include="LeetCode342.cs" />
     <Compile Include="LeetCode412.cs" />
     <Compile Include="LeetCode532.cs" />
     <Compile Include="LeetCode561.cs" />
+    <Compile Include="LeetCode678.cs" />
     <Compile Include="LeetCode700.cs" />
     <Compile Include="LeetCode705.cs" />
     <Compile Include="LeetCode724.cs" />
