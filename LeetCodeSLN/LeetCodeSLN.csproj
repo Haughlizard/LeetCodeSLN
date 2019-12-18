@@ -48,15 +48,21 @@
     <Compile Include="LeetCode136.cs" />
     <Compile Include="LeetCode14.cs" />
     <Compile Include="LeetCode147.cs" />
+    <Compile Include="LeetCode168.cs" />
     <Compile Include="LeetCode190.cs" />
+    <Compile Include="LeetCode219.cs" />
     <Compile Include="LeetCode223.cs" />
     <Compile Include="LeetCode237.cs" />
     <Compile Include="LeetCode268.cs" />
+    <Compile Include="LeetCode334.cs" />
     <Compile Include="LeetCode34.cs" />
     <Compile Include="LeetCode342.cs" />
     <Compile Include="LeetCode412.cs" />
+    <Compile Include="LeetCode476.cs" />
     <Compile Include="LeetCode532.cs" />
     <Compile Include="LeetCode561.cs" />
+    <Compile Include="LeetCode58.cs" />
+    <Compile Include="LeetCode624.cs" />
     <Compile Include="LeetCode678.cs" />
     <Compile Include="LeetCode700.cs" />
     <Compile Include="LeetCode705.cs" />
@@ -66,8 +72,11 @@
     <Compile Include="LeetCode83.cs" />
     <Compile Include="LeetCode88.cs" />
     <Compile Include="LeetCode92.cs" />
+    <Compile Include="LeetCode961.cs" />
     <Compile Include="LeetCode98.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LinkedList\SingleLinkList.cs" />
+    <Compile Include="Strings\Strings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
