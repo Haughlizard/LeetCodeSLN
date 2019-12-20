@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutMath\Maths.cs" />
     <Compile Include="LeetCode100.cs" />
     <Compile Include="LeetCode1047.cs" />
     <Compile Include="LeetCode1154.cs" />
@@ -74,9 +75,12 @@
     <Compile Include="LeetCode92.cs" />
     <Compile Include="LeetCode961.cs" />
     <Compile Include="LeetCode98.cs" />
+    <Compile Include="MinStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LinkedList\SingleLinkList.cs" />
+    <Compile Include="SortAndSearch\SortAndSearch.cs" />
     <Compile Include="Strings\Strings.cs" />
+    <Compile Include="Tree.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

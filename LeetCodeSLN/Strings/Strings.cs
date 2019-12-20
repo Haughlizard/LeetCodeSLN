@@ -85,5 +85,32 @@ namespace LeetCodeSLN.Strings
             }
             return true;
         }
+        /// <summary>
+        /// 是否是回文字符串
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public bool IsPalindrome(string s)
+        {
+            s = s.ToLower();
+            int left = 0;
+            int right = s.Length - 1;
+            while (left <= right)
+            {
+                if (!char.IsLetterOrDigit(s[left]))
+                    {
+                    left++;
+                    continue;
+                }
+                if(!char.IsLetterOrDigit(s[right]))
+                {
+                    right--;
+                    continue;
+                }
+                if (s[left++] != s[right--])
+                    return false;
+            }
+            return true;
+        }
     }
 }

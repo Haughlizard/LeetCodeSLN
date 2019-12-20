@@ -49,5 +49,39 @@ namespace LeetCodeSLN
                 nums1[j+1] = nums2[i];
             }
         }
+
+        /// <summary>
+        /// 第一个错误的版本(二分查找)
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public int FirstBadVersion(int n)
+        {
+            int left = 1;
+            int right = n;
+            int mid = 0;
+            while (left <= right)
+            {
+                mid = left + ((right - left) >> 1);
+                if (IsBadVersion(mid))
+                {
+                    if (!IsBadVersion(mid - 1))
+                    {
+                        return mid;
+                    }
+                    right = mid - 1;
+                }
+                else
+                {
+                    left = mid + 1;
+                }
+            }
+            return -1;
+        }
+
+        private bool IsBadVersion(int n)
+        {
+            return false;
+        }
     }
 }

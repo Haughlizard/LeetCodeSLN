@@ -97,6 +97,7 @@ namespace LeetCodeSLN.LinkedList
         public bool IsPalindrome(ListNode head)
         {
             ListNode newHead = head;
+            return false;
 
         }
 
