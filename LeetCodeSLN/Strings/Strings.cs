@@ -112,5 +112,181 @@ namespace LeetCodeSLN.Strings
             }
             return true;
         }
+
+        public string ReverseWords(string s)
+        {
+            //TODO:待完成
+            //var newstr = Reverse(s);
+            var t = s.Split(' ').SkipWhile(p => String.IsNullOrEmpty(p.Trim()));
+            //t.
+            return string.Join(" ", t.Reverse());
+        }
+
+        /// <summary>
+        /// 反转字符串单词
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public string ReverseWords1(string s)
+        {
+            string[] strs = s.Split(' ');
+            for (int i = 0; i < strs.Length; i++)
+            {
+                strs[i] = Reverse(strs[i]);
+            }
+
+            return string.Join(" ", strs);
+        }
+
+
+
+        private string Reverse(string s)
+        {
+            var chars = s.Trim().ToArray();
+            int left = 0;
+            int right = chars.Length - 1;
+            while (left <= right)
+            {
+                var tmp = chars[left];
+                chars[left] = chars[right];
+                chars[right] = tmp;
+                left++;
+                right--;
+            }
+            return string.Join("", chars);
+        }
+
+        /// <summary>
+        /// 二进制求和
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public string AddBinary(string a, string b)
+        {
+            string step = "0";
+            string[] sum = new string[a.Length >= b.Length ? a.Length + 1 : b.Length + 1];
+            int index = sum.Length - 1;
+            for(int i = a.Length - 1, j = b.Length - 1; i >= 0 || j >= 0; j--, i--)
+            {
+                if (i >= 0 && j >= 0)
+                {
+                    if(a[i]=='1'&&b[j]=='1')
+                    {
+                        if(step=="1")
+                        {
+                            sum[index] = "1";
+                            step = "1";
+                        }else
+                        {
+                            sum[index] = "0";
+                            step = "1";
+                        }
+                        index--;
+                    }else if (a[i] == '1'||b[j]=='1')
+                    {
+                        if (step == "1")
+                        {
+                            sum[index] = "0";
+                            step = "1";
+                        }
+                        else
+                        {
+                            sum[index] = "1";
+                            step = "0";
+                        }
+                        index--;
+                    }else
+                    {
+                        sum[index] = step;
+                        step = "0";
+                        index--;
+                    }
+                }else if (i >= 0)
+                {
+                    if (a[i] == '1')
+                    {
+                        if (step == "1")
+                        {
+                            sum[index] = "0";
+                            step = "1";
+                        }
+                        else
+                        {
+                            sum[index] = "1";
+                            step = "0";
+                        }
+                        index--;
+                    }else
+                    {
+                        sum[index] = step;
+                        step = "0";
+                        index--;
+                    }
+                }else if(j>=0)
+                {
+                    if (b[j] == '1')
+                    {
+                        if (step == "1")
+                        {
+                            sum[index] = "0";
+                            step = "1";
+                        }
+                        else
+                        {
+                            sum[index] = "1";
+                            step = "0";
+                        }
+                        index--;
+                    }
+                    else
+                    {
+                        sum[index] = step;
+                        step = "0";
+                        index--;
+                    }
+                }
+            }
+            if (step == "1")
+            {
+                sum[0] = "1";
+            }
+            return string.Join("", sum);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="haystack"></param>
+        /// <param name="needle"></param>
+        /// <returns></returns>
+        public int StrStr(string haystack, string needle)
+        {
+            if (String.IsNullOrEmpty(needle)) return 0;
+           for(int i = 0; i < haystack.Length; i++)
+            {
+                for(int j = 0; j < needle.Length; j++)
+                {
+                    if(i+j < haystack.Length)
+                    {
+                        if (haystack[i + j] != needle[j])
+                        {
+                            break;
+                        }else
+                        {
+                            if (j == needle.Length - 1)
+                            {
+                                return i;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+            return -1;
+        }
     }
 }

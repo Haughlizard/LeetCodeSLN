@@ -134,8 +134,6 @@ namespace LeetCodeSLN.AboutMath
             long m = 0;
             for(int i = 0; i < 32; i++)
             {
-                if(i==0)
-                    m = m | ((n >> i) & 1);
                 m = (m << 1) | ((n >> i) & 1);
             }
             return (uint)m;
@@ -320,7 +318,104 @@ namespace LeetCodeSLN.AboutMath
         /// <param name="k"></param>
         public void Rotate(int[] nums, int k)
         {
+            k = k % nums.Length;
+            int tmp = nums[0];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int re = (i + k) % (nums.Length - 1);
+                nums[re] = nums[i];
+                
+            }
+
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public int ArrayPairSum(int[] nums)
+        {
+            Array.Sort(nums);
+            int sum = 0;
+            for(int i = 0; i < nums.Length; i+=2)
+            {
+                sum += nums[i];
+            }
+            return sum;
+        }
+
+        /// <summary>
+        ///  两数之和 II - 输入有序数组
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public int[] TwoSum(int[] numbers, int target)
+        {
+            return new int[] { -1, -1 };
+        }
+
+        /// <summary>
+        /// 移除元素
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public int RemoveElement(int[] nums, int val)
+        { 
+            int right = nums.Length;
+            int i = 0;
+            for(; i < nums.Length;)
+            {
+                
+                if (i >= right) break;
+                if (nums[i] == val)
+                {
+                    for (int j = i; j < right - 1; j++)
+                    {
+                        nums[j] = nums[j + 1];
+                    }
+                    right -= 1;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return i;
+        }
+
+        /// <summary>
+        /// 最大连续1
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public int FindMaxConsecutiveOnes(int[] nums)
+        {
+            int max = 0;
+            int tmp = 0;
+            for(int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 1)
+                {
+                    if(nums.Length > i + 1 && nums[i] == nums[i + 1])
+                    {
+                        tmp += 1;
+                    }
+                    else
+                    {
+                        if (max < tmp + 1)
+                            max = tmp + 1;
+                        tmp = 0;
+                    }
+                    
+                }
+            }
+            return max;
+        }
+
+        
     }
 }

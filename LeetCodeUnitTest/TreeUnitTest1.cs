@@ -1,6 +1,7 @@
 ﻿using System;
 using LeetCodeSLN;
 using LeetCodeSLN.AboutMath;
+using LeetCodeSLN.Strings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LeetCodeUnitTest
@@ -45,8 +46,17 @@ namespace LeetCodeUnitTest
         public void TestMethod3()
         {
             Maths mt = new Maths();
-            int[] nums = new int[] { 1,0,2,0,4,5,6,0,0,8 };
-            mt.MoveZeroes(nums);
+            int[] nums = new int[] { 1,1 };
+            var length = mt.FindMaxConsecutiveOnes(nums);
+        }
+
+        [TestMethod]
+        public void TestMethod4()
+        {
+            Strings mt = new Strings();
+            string a = "hello";
+            string b = "ll";
+            var length = mt.StrStr(a,b);
         }
     }
 }

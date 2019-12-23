@@ -123,5 +123,22 @@ namespace LeetCodeSLN.LinkedList
             }
             return false;
         }
+
+        /// <summary>
+        /// 两两交换链表节点
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        public ListNode SwapPairs(ListNode head)
+        {
+            if (head == null || head.next == null)
+            {
+                return head;
+            }
+            ListNode next = head.next;
+            head.next = SwapPairs(next.next);
+            next.next = head;
+            return next;
+        }
     }
 }
