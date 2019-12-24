@@ -2,6 +2,7 @@
 using LeetCodeSLN;
 using LeetCodeSLN.AboutMath;
 using LeetCodeSLN.Strings;
+using LeetCodeSLN.DataStructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LeetCodeUnitTest
@@ -57,6 +58,16 @@ namespace LeetCodeUnitTest
             string a = "hello";
             string b = "ll";
             var length = mt.StrStr(a,b);
+        }
+
+        [TestMethod]
+        public void TestMethod5()
+        {
+            MovingAverage avg = new MovingAverage(1);
+            var a = avg.Next(4);
+            var b = avg.Next(0);
+            var c = avg.Next(3);
+            var d = avg.Next(4);
         }
     }
 }

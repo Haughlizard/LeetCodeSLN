@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutMath\Maths.cs" />
+    <Compile Include="DataStructure\MovingAverage.cs" />
+    <Compile Include="DataStructure\MyCircularQueue.cs" />
+    <Compile Include="DataStructure\MyStack.cs" />
     <Compile Include="LeetCode100.cs" />
     <Compile Include="LeetCode1047.cs" />
     <Compile Include="LeetCode1154.cs" />
