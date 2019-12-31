@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LeetCodeSLN.DataStructure
 {
     
-    public class MyStack
+    public class MyStack1
     {
         /// <summary>
         /// 根据每日 气温 列表，请重新生成一个列表，
@@ -90,6 +90,161 @@ namespace LeetCodeSLN.DataStructure
         {
             //TODO:字符串解码
             return string.Empty;
+        }
+
+        /// <summary>
+        /// 接雨水
+        /// </summary>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public int Trap(int[] height)
+        {
+            return 1;
+        }
+    }
+
+    /// <summary>
+    /// 队列实现栈
+    /// </summary>
+    public class MyStack
+    {
+        private Queue<int> _queue;
+        private Queue<int> _assQueue;
+        private int top = 0;
+        /** Initialize your data structure here. */
+        public MyStack()
+        {
+            _queue = new Queue<int>();
+            _assQueue = new Queue<int>();
+        }
+
+        /** Push element x onto stack. */
+        public void Push(int x)
+        {
+            top = x;
+            _queue.Enqueue(x);
+        }
+
+        /** Removes the element on top of the stack and returns that element. */
+        public int Pop()
+        {
+            int o = 0;
+            while (_queue.Count > 1)
+            {
+                _assQueue.Enqueue(_queue.Dequeue());
+            }
+            if (_queue.Count > 0)
+            {
+                o = _queue.Dequeue();
+                
+                while (_assQueue.Count> 0)
+                {
+                    if(_assQueue.Count==1)
+                        top = _assQueue.Peek();
+                    _queue.Enqueue(_assQueue.Dequeue());
+                }
+            }
+            return o;
+        }
+
+        /** Get the top element. */
+        public int Top()
+        {
+            return top;
+        }
+
+        /** Returns whether the stack is empty. */
+        public bool Empty()
+        {
+            return _queue.Count == 0;
+        }
+    }
+
+    /// <summary>
+    /// 用栈实现队列
+    /// </summary>
+    public class MyQueue
+    {
+        private Stack<int> _data;
+        private Stack<int> _tmp;
+        private int head;
+        /** Initialize your data structure here. */
+        public MyQueue()
+        {
+            _data = new Stack<int>();
+            _tmp = new Stack<int>();
+        }
+
+        /** Push element x to the back of queue. */
+        public void Push(int x)
+        {
+            if (_data.Count == 0)
+                head = x;
+            _data.Push(x);
+        }
+
+        /** Removes the element from in front of queue and returns that element. */
+        public int Pop()
+        {
+            int o = 0;
+            while (_data.Count > 1)
+            {
+                _tmp.Push(_data.Pop());
+            }
+
+            if(_data.Count>0)
+            {
+                o = _data.Pop();
+                if (_data.Count == 0 &&_tmp.Count>0)
+                    head = _tmp.Peek();
+                while (_tmp.Count > 0)
+                {
+                    _data.Push(_tmp.Pop());
+                }
+            }
+            return o;
+        }
+
+        /** Get the front element. */
+        public int Peek()
+        {
+            return head;
+        }
+
+        /** Returns whether the queue is empty. */
+        public bool Empty()
+        {
+            return _data.Count == 0;
+        }
+    }
+
+
+    /// <summary>
+    /// 实现基本的哈希表
+    /// </summary>
+    public class MyHashSet
+    {
+
+        /** Initialize your data structure here. */
+        public MyHashSet()
+        {
+
+        }
+
+        public void Add(int key)
+        {
+
+        }
+
+        public void Remove(int key)
+        {
+
+        }
+
+        /** Returns true if this set contains the specified element */
+        public bool Contains(int key)
+        {
+            return false;
         }
     }
 }

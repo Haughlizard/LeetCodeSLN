@@ -4,6 +4,8 @@ using LeetCodeSLN.AboutMath;
 using LeetCodeSLN.Strings;
 using LeetCodeSLN.DataStructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using LeetCodeSLN.SortAndSearch;
 
 namespace LeetCodeUnitTest
 {
@@ -68,6 +70,49 @@ namespace LeetCodeUnitTest
             var b = avg.Next(0);
             var c = avg.Next(3);
             var d = avg.Next(4);
+        }
+
+        [TestMethod]
+        public void TestMethod6()
+        {
+            string s = "aaa";
+            var ch = s[0];
+            int count = 1000000000;
+            int a = 231312312;
+            int b = 100000000;
+            System.Diagnostics.Stopwatch sw1 = new System.Diagnostics.Stopwatch();
+            sw1.Start();
+            for(int i = 0; i < count; i++)
+            {
+                int c = (a + b) / 2;
+            }
+            sw1.Stop();
+            var time1 = sw1.ElapsedMilliseconds;
+            System.Diagnostics.Stopwatch sw2 = new System.Diagnostics.Stopwatch();
+            sw2.Start();
+            for (int i = 0; i < count; i++)
+            {
+                int c = (a + b) >> 1;
+            }
+            sw2.Stop();
+            var time2 = sw2.ElapsedMilliseconds;
+        }
+
+        [TestMethod]
+        public void TestMethod7()
+        {
+            string a = "ab";
+            string b = "aa";
+            SortAndSearch ss = new SortAndSearch();
+            var istrue =ss.Multiply("99999","0");
+        }
+
+        [TestMethod]
+        public void TestMethod8()
+        {
+            string a = "aaabbvvtrtgfdhfdfhhhh";
+            SortAndSearch ss = new SortAndSearch();
+            var istrue = ss.FrequencySort(a);
         }
     }
 }
