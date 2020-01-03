@@ -6,6 +6,8 @@ using LeetCodeSLN.DataStructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using LeetCodeSLN.SortAndSearch;
+using LeetCodeSLN.Design;
+using LeetCodeSLN.BinarySearch;
 
 namespace LeetCodeUnitTest
 {
@@ -113,6 +115,35 @@ namespace LeetCodeUnitTest
             string a = "aaabbvvtrtgfdhfdfhhhh";
             SortAndSearch ss = new SortAndSearch();
             var istrue = ss.FrequencySort(a);
+        }
+
+        [TestMethod]
+        public void TestMethod9()
+        {
+            Trie trie = new Trie();
+            trie.Insert("apple");
+            var b1 = trie.Search("app");
+            trie.Insert("app");
+            var b2 = trie.StartsWith("appl");
+        }
+
+        [TestMethod]
+        public void TestMethod10()
+        {
+            BinarySearch bs = new BinarySearch();
+            //int[] A = new int[] { -10, -5, -2, 0, 4, 5, 6, 7, 8, 9, 10};
+            //var index = bs.FixedPoint(A);
+
+            //int[] nums = new int[] { 2, 4, 5, 5, 5, 5, 5, 6, 6 };
+            //var ismajor = bs.IsMajorityElement(nums, 5);
+            //string s = "abc";
+            //string t = "ahbgdc";
+            //var issub = bs.IsSubsequence(s, t);
+
+            int[] nums = new int[] { 3, 5, 3, 2, 0};
+            var ma = new MountainArray(nums);
+
+            var index = bs.FindInMountainArray(5, ma);
         }
     }
 }

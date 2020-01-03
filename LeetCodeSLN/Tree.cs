@@ -173,12 +173,10 @@ namespace LeetCodeSLN
         {
             if (root != null)
             {
-                PreOrder(root.left, list);
-                PreOrder(root.right, list);
+                AfterOrder(root.left, list);
+                AfterOrder(root.right, list);
                 list.Add(root.val);
             }
         }
-
-
     }
 }

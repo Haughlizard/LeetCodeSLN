@@ -42,9 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutMath\Maths.cs" />
+    <Compile Include="BinarySearch\BinarySearch.cs" />
     <Compile Include="DataStructure\MovingAverage.cs" />
     <Compile Include="DataStructure\MyCircularQueue.cs" />
     <Compile Include="DataStructure\MyStack.cs" />
+    <Compile Include="Design\Logger.cs" />
+    <Compile Include="Design\MaxStack.cs" />
+    <Compile Include="Design\Trie.cs" />
+    <Compile Include="Design\Vector2D.cs" />
+    <Compile Include="Design\ZigzagIterator.cs" />
     <Compile Include="LeetCode100.cs" />
     <Compile Include="LeetCode1047.cs" />
     <Compile Include="LeetCode1154.cs" />
