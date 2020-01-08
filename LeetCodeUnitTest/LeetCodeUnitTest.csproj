@@ -58,6 +58,8 @@
     <Compile Include="LeetCode342UnitTest.cs" />
     <Compile Include="LeetCode561UnitTest.cs" />
     <Compile Include="TreeUnitTest1.cs" />
+    <Compile Include="HeapUnitTest.cs" />
+    <Compile Include="SortUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

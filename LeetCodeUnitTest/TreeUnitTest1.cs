@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using LeetCodeSLN.SortAndSearch;
 using LeetCodeSLN.Design;
 using LeetCodeSLN.BinarySearch;
+using LeetCodeSLN.Stack;
 
 namespace LeetCodeUnitTest
 {
@@ -144,6 +145,26 @@ namespace LeetCodeUnitTest
             var ma = new MountainArray(nums);
 
             var index = bs.FindInMountainArray(5, ma);
+        }
+
+        [TestMethod]
+        public void TestMethod11()
+        {
+            Stack st = new Stack();
+            //var a = long.MaxValue;
+            //string s = "(()())(())(()(()))";
+            //var result = st.RemoveOuterParentheses(s);
+            var s = "2-1+2";
+            var result = st.Calculate(s);
+        }
+
+        [TestMethod]
+        public void TestMethod12()
+        {
+            var isNum = char.IsNumber('1');
+            decimal num = 0;
+            var s = "1e9";
+            Decimal.TryParse(s, out num);
         }
     }
 }

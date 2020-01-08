@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +27,24 @@ namespace LeetCodeSLN
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        public static uint reverseBits(uint n)
+        public static uint ReverseBits1(uint n)
         {
-            //TODO
-            return 0;
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < 32; i++)
+            {
+                sb.Append((n >> i & 0x01).ToString());
+            }
+            return Convert.ToUInt32(sb.ToString(), 2);
+        }
+
+        public static uint ReverseBits(uint n)
+        {
+            uint ans = 0;
+            for (int i = 0; i < 32; ++i)
+            {
+                ans = ans | (((n >> i) & 0x1) << (31 - i));
+            }
+            return ans;
         }
     }
 }

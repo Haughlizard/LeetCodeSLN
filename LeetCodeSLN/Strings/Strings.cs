@@ -288,5 +288,108 @@ namespace LeetCodeSLN.Strings
             }
             return -1;
         }
+
+        /// <summary>
+        /// 最长的回文子串
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public string LongestPalindrome(string s)
+        {
+            //TODO:待完成
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// IP地址无效化
+        /// 使用内置ReplaceAPI
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
+        public string DefangIPaddr1(string address)
+        {
+            //速度没有使用StringBuilder的版本快
+            return address.Replace(".", "[.]");
+        }
+
+        /// <summary>
+        /// IP地址无效化
+        /// 使用StringBuilder
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
+        public string DefangIPaddr2(string address)
+        {
+            var sb = new StringBuilder();
+
+            for (int i = 0; i < address.Length; i++)
+            {
+                if (address[i] != '.')
+                {
+                    sb.Append(address[i]);
+                }
+                else
+                {
+                    sb.Append('[').Append(address[i]).Append(']');
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// 亲密字符串
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <returns></returns>
+        public bool BuddyStrings(String A, String B)
+        {
+            if (A.Length != B.Length)
+            {
+                return false;
+            }
+            else if (A.Equals(B))
+            {
+                for (int i = 0; i < A.Length; i++)
+                    if (A.IndexOf(A[i]) != i)
+                        return true;
+            }
+            int count = 0;
+            char strA1 = char.MinValue, strA2 = char.MinValue, strB1 = char.MinValue, strB2 = char.MinValue;
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (A[i] != B[i])
+                {
+                    count++;
+                    if (count == 1)
+                    {
+                        strA1 = A[i];
+                        strB1 = B[i];
+                    }
+                    if (count == 2)
+                    {
+                        strA2 = A[i];
+                        strB2 = B[i];
+                    }
+                }
+                if (count > 2)
+                    return false;
+            }
+            return count == 2 && strA1 == strB2 && strA2 == strB1;
+        }
+
+        /// <summary>
+        /// 删除无效括号
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public string MinRemoveToMakeValid(string s)
+        {
+            //TODO: 删除无效括号
+            return s;
+        }
+
+
     }
 }

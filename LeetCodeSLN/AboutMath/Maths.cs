@@ -416,6 +416,18 @@ namespace LeetCodeSLN.AboutMath
             return max;
         }
 
-        
+        /// <summary>
+        /// 1056.混淆数
+        /// </summary>
+        /// <param name="N"></param>
+        /// <returns></returns>
+        public bool ConfusingNumber(int N)
+        {
+
+            //TODO:待完成
+            return false;
+        }
+
+
     }
 }
