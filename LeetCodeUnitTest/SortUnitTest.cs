@@ -18,7 +18,7 @@ namespace LeetCodeUnitTest
             {
                 nums[i] = rd.Next(1, 100000);
             }
-            st.ShellSort(nums);
+            st.MergeSort(nums);
         }
     }
 }

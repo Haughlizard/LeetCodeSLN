@@ -160,8 +160,14 @@ namespace LeetCodeSLN.SortAndSearch
             MergeSort(nums, middle + 1, hi);
             Merge(nums, lo, middle, hi);
         }
-        
-        private void Merge(int[] nums,int lo,int mid,int hi)
+        /// <summary>
+        /// 合并有序数组方法1
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="lo"></param>
+        /// <param name="mid"></param>
+        /// <param name="hi"></param>
+        private void Merge1(int[] nums,int lo,int mid,int hi)
         {
             int i = lo;
             int j = mid + 1;
@@ -176,6 +182,32 @@ namespace LeetCodeSLN.SortAndSearch
                 else if (aux[j] < aux[i]) nums[k] = aux[j++];
                 else nums[k] = aux[i++];
             }
+        }
+
+        /// <summary>
+        /// 合并有序数组方法2
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="lo"></param>
+        /// <param name="mid"></param>
+        /// <param name="hi"></param>
+        private void Merge(int[] nums, int lo, int mid, int hi)
+        {
+            int[] tmp = new int[hi - lo+1];
+            int index = 0;
+            for(int i = lo,j = mid + 1; i <= mid || j <= hi;)
+            {
+                if (i > mid)
+                    tmp[index++] = nums[j++];
+                else if (j> hi)
+                    tmp[index++] = nums[i++];
+                else if (nums[i] <= nums[j])
+                    tmp[index++] = nums[i++];
+                else
+                    tmp[index++] = nums[j++];
+
+            }
+            Array.Copy(tmp, 0, nums, lo, hi - lo + 1);
         }
         #endregion
 
