@@ -60,6 +60,7 @@
     <Compile Include="TreeUnitTest1.cs" />
     <Compile Include="HeapUnitTest.cs" />
     <Compile Include="SortUnitTest.cs" />
+    <Compile Include="PriorityQueueUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

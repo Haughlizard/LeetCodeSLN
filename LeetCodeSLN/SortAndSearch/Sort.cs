@@ -198,14 +198,14 @@ namespace LeetCodeSLN.SortAndSearch
             for(int i = lo,j = mid + 1; i <= mid || j <= hi;)
             {
                 if (i > mid)
-                    tmp[index++] = nums[j++];
+                    tmp[index] = nums[j++];
                 else if (j> hi)
-                    tmp[index++] = nums[i++];
+                    tmp[index] = nums[i++];
                 else if (nums[i] <= nums[j])
-                    tmp[index++] = nums[i++];
+                    tmp[index] = nums[i++];
                 else
-                    tmp[index++] = nums[j++];
-
+                    tmp[index] = nums[j++];
+                index++;
             }
             Array.Copy(tmp, 0, nums, lo, hi - lo + 1);
         }

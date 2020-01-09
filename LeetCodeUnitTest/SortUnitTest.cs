@@ -1,4 +1,5 @@
 ﻿using System;
+using LeetCodeSLN.DataStructure;
 using LeetCodeSLN.SortAndSearch;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -12,13 +13,13 @@ namespace LeetCodeUnitTest
         {
             Sort st = new Sort();
             Random rd = new Random();
-            int N = 10000;
+            int N = 100;
             int[] nums = new int[N];
             for(int i = 0; i < N; i++)
             {
                 nums[i] = rd.Next(1, 100000);
             }
-            st.MergeSort(nums);
+            st.HeadSort(nums);
         }
     }
 }
